@@ -6,10 +6,26 @@
  */
 exports.SumOfASquare = SumOfASquare;
 
-function SumOfASquare(naturalNumbers){
+function SumOfASquare(naturalNumbers) {
   this.naturalNumbers = naturalNumbers;
 }
 
+SumOfASquare.prototype.sumOfSquares = function() {
+  let sumSquared = 0;
+
+  for (let i = 0; i <= this.naturalNumbers; i++) {
+    let square = Math.pow(i, 2);
+    sumSquared += square;
+  }
+  return sumSquared;
+};
+SumOfASquare.prototype.squareOfTheSums = function() {
+  let sum = 0;
+  for (let i = 0; i <= this.naturalNumbers; i++) {
+    sum += i;
+  }
+  return Math.pow(sum, 2);
+};
 // do work here
 
 // overwrite the object prototype, or add methods to the prototype
